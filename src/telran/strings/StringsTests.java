@@ -13,6 +13,10 @@ public class StringsTests {
      void  charAtTest() {
 		assertEquals(telran.charAt(3),'r');
 		assertEquals(telran.charAt(5),'n');
+//		assertEquals('x', "".charAt(0));
+//		assertEquals('x', "Java".charAt(-1));
+//		assertEquals('x', "Java".charAt(7));
+	 
      }
 	@Test
 	void  compareToTest() {
@@ -23,11 +27,14 @@ public class StringsTests {
 	void  compareToIgnoreCaseTest() {
 		assertEquals(0,telran.compareToIgnoreCase("telRaN"));
 		assertEquals(0,telran.compareToIgnoreCase("TELRAN"));
+		assertEquals(0, "hello".compareToIgnoreCase("hello"));
      }
 	@Test
     void  concatTest() {
 		assertEquals(telran.concat(telran1),"TelranTelran");
 		assertFalse(telran.concat("opa")== "justcheck");
+		assertEquals("xxxx".concat(""),"".concat("xxxx"));
+		
     }
 	@Test
     void  startsWithTest() {
@@ -38,12 +45,14 @@ public class StringsTests {
     void  endsWithTest() {
 		assertTrue(telran.endsWith("ran"));
 		assertFalse(telran.endsWith("ron"));
+		assertTrue(telran1.startsWith(""));
     }
 	@Test
     void  containsTest() {
 		assertTrue(telran.contains("ran"));
 		assertTrue(telran.contains("el"));
 		assertFalse(telran.contains("TL"));
+		assertTrue(telran1.endsWith(""));
     }
 	@Test
     void  indexOfTest() {
